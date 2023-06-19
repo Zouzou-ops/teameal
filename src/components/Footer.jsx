@@ -7,6 +7,7 @@ function Footer() {
         <>
             <div className="bg-foot bg-no-repeat bg-cover flex flex-col items-center py-9">
                 <Image
+                
                     src="logopink.svg"
                     width={150.99}
                     height={32}

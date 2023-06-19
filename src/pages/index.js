@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export default function Home() {
     return (
@@ -17,17 +18,49 @@ export default function Home() {
                 <h2 className="text-4xl md:text-3xl pb-24">En seulement 3 étapes</h2>
 
                 <div className="flex md:flex-col justify-center  gap-x-10">
-                    <img src="img/step1.png" alt="step1" />
-                    <img className="self-center md:py-16 md:block hidden md:transform rotate-90" src="img/blueline.png" alt="" />
-                    <img className="self-center md:py-16 md:hidden" src="img/blueline.png" alt="" />
-                    <img src="img/step2.png" alt="step2" />
-                    <img className="self-center md:py-16 md:block hidden md:transform rotate-90" src="img/blueline.png" alt="" />
-                    <img className="self-center md:py-16 md:hidden" src="img/blueline.png" alt="" />
-                    <img src="img/step3.png" alt="step3" />
+                    <Image
+                        width={150.99}
+                        height={32}
+                        src="/img/step1.png"
+                        alt="step1" />
+                    <Image
+                        width={150.99}
+                        height={32}
+                        className="self-center md:py-16 md:block hidden md:transform rotate-90"
+                        src="/img/blueline.png"
+                        alt="" />
+                    <Image
+                        width={150.99}
+                        height={32}
+                        className="self-center md:py-16 md:hidden"
+                        src="/img/blueline.png"
+                        alt="" />
+                    <Image
+                        width={150.99}
+                        height={32}
+                        src="/img/step2.png"
+                        alt="step2" />
+                    <Image
+                        width={150.99}
+                        height={32}
+                        className="self-center md:py-16 md:block hidden md:transform rotate-90"
+                        src="/img/blueline.png"
+                        alt="" />
+                    <Image
+                        width={150.99}
+                        height={32}
+                        className="self-center md:py-16 md:hidden"
+                        src="/img/blueline.png" 
+                        alt="" />
+                    <Image
+                        width={150.99} 
+                        height={32}
+                        src="/img/step3.png"
+                        alt="step3" />
                 </div>
 
                 <div className=" flex justify-center pt-16 ">
-                    <img className=" absolute  w-screen " src="pinkline.svg" alt="" />
+                    <Image width={150.99} height={32} className=" absolute  w-screen " src="pinkline.svg" alt="" />
 
                     {/* Bouton Inscrivez-vous */}
                     <div className="md:hidden py-28">
@@ -49,18 +82,18 @@ export default function Home() {
                 <p className="pb-7 md:pb-10 px-20 md:px-12 w-1/2 md:w-full">Découvrez nos restaurants partenaires et rejoignez-nous pour mettre le votre en avant. Attirez de nouveaux clients et faites briller votre restaurant avec Teameal !</p>
 
                 <div className="flex md:justify-normal justify-center space-x-7 md:overflow-x-auto pl-10  ">
-                    <img className="" src="img/restaurant1.png" alt="" />
-                    <img src="img/restaurant2.png" alt="" />
-                    <img src="img/restaurant3.png" alt="" />
-                    <img src="img/restaurant4.png" alt="" />
+                    <Image width={243.47} height={335} src="/img/restaurant1.png" alt="" />
+                    <Image width={150.99} height={32} src="/img/restaurant2.png" alt="" />
+                    <Image width={150.99} height={32} src="/img/restaurant3.png" alt="" />
+                    <Image width={150.99} height={32} src="/img/restaurant4.png" alt="" />
                 </div>
             </section>
 
             <section id="partners" className=" bg-lumwhite flex md:flex-col px-20 md:px-10 pb-20 ">
                 <div className=" w-1/2 md:w-full">
                     <h4 className="text-4xl md:text-3xl md:pb-6 pt-24 md:pt-10 px-20 md:px-12 pb-7">Nos partenaires</h4>
-                    <p className="pb-7 md:pb-10 px-20 md:px-12  md:w-full">Gérant d'un restaurant, vous souhaitez faire connaître votre établissement à une communauté passionnée de découvertes culinaires ?</p>
-                    <p className="pb-7 md:pb-10 px-20 md:px-12  md:w-full">Rejoignez Teameal dès maintenant et mettez en valeur votre restaurant, attirez de nouveaux clients et créez des expériences culinaires inoubliables.</p>               
+                    <p className="pb-7 md:pb-10 px-20 md:px-12  md:w-full">Gérant d&rsquo;un restaurant, vous souhaitez faire connaître votre établissement à une communauté passionnée de découvertes culinaires ?</p>
+                    <p className="pb-7 md:pb-10 px-20 md:px-12  md:w-full">Rejoignez Teameal dès maintenant et mettez en valeur votre restaurant, attirez de nouveaux clients et créez des expériences culinaires inoubliables.</p>
 
                     {/* Bouton Devenez partenaire */}
                     <div className="md:hidden px-20">
@@ -75,17 +108,17 @@ export default function Home() {
 
                 </div>
                 <div className="  grid grid-cols-2 mt-20 md:mt-0 pl-44 md:pl-0 self-center items-center w-1/2 md:w-full gap-10 ">
-                    <img src="/img/part1.svg" alt="" />
-                    <img src="/img/part2.svg" alt="" />
-                    <img src="/img/part3.svg  " alt="" />
-                    <img src="/img/part4.svg" alt="" />
+                    <Image width={150.99} height={32} src="/img/part1.svg" alt="" />
+                    <Image width={150.99} height={32} src="/img/part2.svg" alt="" />
+                    <Image width={150.99} height={32} src="/img/part3.svg" alt="" />
+                    <Image width={150.99} height={32} src="/img/part4.svg" alt="" />
                 </div>
             </section>
 
             <section id="newsletter">
 
             </section>
-            <Footer /> 
+            <Footer />
         </>
     );
 };
