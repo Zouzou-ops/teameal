@@ -1,18 +1,30 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+    screens: {
+      'md': { 'max': '767px' },
+      
     },
+    extend: {
+      colors: {
+        'lumblue': '#0E337D',
+        'lumpink': '#F7B9D2',
+        'lumred': '#E12B2B',
+        'lumwhite': '#F0E8DD',
+      },
+      backgroundImage: {
+        home: "url('/img/home.png')",
+        etab: "url('/img/etablishment.png')",
+        foot: "url('/img/footerbg.png')"
+      }
+    }
   },
-  plugins: [],
-}
+  plugins: [require('@tailwindcss/aspect-ratio')],
+};
+
