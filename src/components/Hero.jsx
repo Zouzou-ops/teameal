@@ -4,10 +4,10 @@ import Image from 'next/image'
 function Hero() {
     return (
         <section>
-            <div className="bg-home md:h-[50vh] h-1/4 bg-no-repeat bg-cover pt-20 md:px-8 px-20 flex  " >
+            <div className="bg-home md:h-[50vh] bg-no-repeat bg-cover pt-20 md:px-8 px-20 flex  " >
                 <div className="md:w-full w-4/6 flex flex-col justify-center " >
-                    <h1 className="md:text-4xl text-6xl text-lumred ">À la recherche du match culinaire parfait ?  </h1>
-                    <p className=" text-lumred py-10">Une expérience culinaire qui connecte les cœurs affamés autour d&#39une table.</p>
+                    <h1 className="md:text-4xl text-6xl text-lumred font-bold">À la recherche du match culinaire parfait ?  </h1>
+                    <p className=" text-lumred font-medium text-xl py-10">Une expérience culinaire qui connecte les cœurs affamés autour d&rsquo;une table.</p>
 
                     {/* Bouton découvrir */}
                     <div className="md:hidden">
@@ -23,7 +23,7 @@ function Hero() {
                 </div>
                 <div className="md:hidden  w-2/6 ">
                     <Image
-                        src="/img/smartphon.png"
+                        src="/img/hero/smartphone.png"
                         alt="image d'un telephone portable"
                         width={500}
                         height={580}

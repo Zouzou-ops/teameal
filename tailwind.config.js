@@ -19,9 +19,10 @@ module.exports = {
         'lumwhite': '#F0E8DD',
       },
       backgroundImage: {
-        home: "url('/img/home.png')",
-        etab: "url('/img/etablishment.png')",
-        foot: "url('/img/footerbg.png')"
+        home: "url('/img/hero/home.png')",
+        etab: "url('/img/lp/etablishment.png')",
+        foot: "url('/img/footer/footerbg.png')",
+        bluephone: "url('/img/mobile/bluebgapp.png')",
       }
     }
   },
