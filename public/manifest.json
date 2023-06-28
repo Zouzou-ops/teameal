@@ -1,0 +1,19 @@
+{
+    "name": "Teameal",
+    "short_name": "Teameal",
+    "description": "A description of my web app",
+    "icons": [
+      {
+        "src": "/img/mobile/logo_min200.png",
+        "sizes": "200x200",
+        "type": "icon-192x192.png"
+      }
+
+    ],
+    "start_url": "/tuto1",
+    "display": "fullscreen",
+    "background_color": "#0E337D",
+    "theme_color": "#0E337D"
+    
+  }
+  

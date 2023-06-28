@@ -1,9 +1,52 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-    display: none;
-  }
-  
+  display: none;
+}
+
+/* HERO */
+.span-parfait {
+  background-image: url("/img/hero/span-parfait.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* LP */
+.span-3 {
+  background-image: url("/img/lp/span-red.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.step1{
+  background-image: url("/img/lp/stepx.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 176px;
+  height: 122px;  
+}
+
+/* 404 */
+.error-img {
+  background-image: url("/img/error/404.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 746.47px;
+  height: 323.18px;
+}
+
+.error-phone-img{
+  background-image: url("/img/error/404-phone.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 337.69px;
+  height: 152px;
+}

@@ -17,12 +17,14 @@ module.exports = {
         'lumpink': '#F7B9D2',
         'lumred': '#E12B2B',
         'lumwhite': '#F0E8DD',
+        'lumdarkpink': '#CD90A8'
       },
       backgroundImage: {
         home: "url('/img/hero/home.png')",
         etab: "url('/img/lp/etablishment.png')",
         foot: "url('/img/footer/footerbg.png')",
         bluephone: "url('/img/mobile/bluebgapp.png')",
+        menuburger: "url('/img/navbar/menuburger.png')"
       }
     }
   },
