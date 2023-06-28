@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { store } from "./store";
+import axios from "axios";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import Link from "next/link";
 
 const updateUser = () => {
   const router = useRouter();
-  const [user, setUser] = useState({
-    nom: "",
-    prenom: "",
-  });
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
-      console.log(user);
     }
   }, []);
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
 
   const [regimeTest, setRegimeTest] = useState(false);
   const [restrictionTest, setRestrictionTest] = useState(false);
   const [allergiesTest, setAllergiesTest] = useState(false);
+
   const [newUser, setNewUser] = useState({
     nom: "",
     prenom: "",
@@ -34,33 +37,42 @@ const updateUser = () => {
     recommandations: "",
   });
 
-
   const handleChangeUser = (e) => {
     setNewUser({ ...newUser, [e.target.name]: e.target.value });
   };
 
-  const userUpdate = () => async () => {
+  const userUpdate = async () => {
     try {
       setUser(newUser);
       const response = await axios.put(
         `http://localhost:5000/api/user/update/${user._id}`,
         newUser
       );
-      
-      localStorage.setItem("user", JSON.stringify(newUser));
-      console.log(response.data.newUser);
-      // router.push("/profil");
 
+      localStorage.setItem("user", JSON.stringify(response.data.newUser));
+      console.log(newUser);
+      router.push("/profil");
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <div>
-      <form className="flex flex-col justify-center items-center">
+    <div className="bg-lumblue min-h-screen px-8">
+      <div className="flex w-full justify-between items-center py-10">
+        <Link href="/profil">
+          <BsFillArrowLeftCircleFill size={36} />
+        </Link>
+        <h2 className="text-lumpink font-semibold">Changement du profil</h2>
+        <div className="h-9 w-9 bg-lumblue"></div>
+      </div>
+      <p className="text-lumpink font-medium text-center pb-4">
+        Tout les informations doivent être reprises afin de pouvoir les
+        enregistrer !
+      </p>
+      <form className="flex flex-col  justify-center items-center">
         <input
-          className="mb-5"
+          className="mb-2.5 px-8 py-2.5 rounded-lg text-left text-lumpink placeholder-lumpink"
           name="nom"
           type="text"
           value={newUser.nom}
@@ -68,7 +80,7 @@ const updateUser = () => {
           onChange={handleChangeUser}
         />
         <input
-          className="mb-5"
+          className="mb-2.5 px-8 py-2.5 rounded-lg text-left text-lumpink placeholder-lumpink "
           name="prenom"
           type="text"
           value={newUser.prenom}
@@ -76,7 +88,7 @@ const updateUser = () => {
           onChange={handleChangeUser}
         />
         <input
-          className="mb-5"
+          className="mb-2.5 px-8 py-2.5 rounded-lg text-left text-lumpink placeholder-lumpink"
           name="age"
           value={newUser.age}
           type="text"
@@ -84,7 +96,7 @@ const updateUser = () => {
           onChange={handleChangeUser}
         />
         <input
-          className="mb-5"
+          className="mb-2.5 px-8 py-2.5 rounded-lg text-left text-lumpink placeholder-lumpink"
           name="ville"
           type="text"
           value={newUser.ville}
@@ -92,7 +104,7 @@ const updateUser = () => {
           onChange={handleChangeUser}
         />
         <input
-          className="mb-5"
+          className="mb-2.5 px-8 py-2.5 rounded-lg text-left text-lumpink placeholder-lumpink"
           name="telephone"
           type="text"
           value={newUser.telephone}
@@ -100,8 +112,9 @@ const updateUser = () => {
           onChange={handleChangeUser}
         />
       </form>
+
       {/* Buttons genre */}
-      <div className="flex justify-around">
+      <div className="flex justify-around py-10">
         <button
           className="text-lumpink bg-white rounded-md px-2.5 py-0.5"
           onClick={() => {
@@ -129,7 +142,10 @@ const updateUser = () => {
       </div>
       {/* Buttons regime */}
       <div>
-        <div className="flex justify-around">
+        <p className="text-lumpink font-medium text-center">
+          Avez-vous un régime alimentaire ?
+        </p>
+        <div className="flex justify-around pb-10 pt-4">
           <button
             className="text-lumpink bg-white rounded-md px-2.5 py-0.5"
             onClick={() => {
@@ -149,7 +165,9 @@ const updateUser = () => {
         </div>
         {regimeTest && (
           <div>
-            <p className="text-lumpink font-medium">Si oui, lequel ?</p>
+            <p className="text-lumpink font-medium text-center">
+              Si oui, lequel ?
+            </p>
             <input
               className="mb-5 rounded-md"
               name="regime"
@@ -163,8 +181,10 @@ const updateUser = () => {
       </div>
       {/* Restrictions */}
       <div>
-        <p className="text-lumpink font-medium">Avez-vous des restrictions ?</p>
-        <div className="flex justify-around">
+        <p className="text-lumpink font-medium text-center">
+          Avez-vous des restrictions ?
+        </p>
+        <div className="flex justify-around pb-10 pt-4">
           <button
             className="text-lumpink bg-white rounded-md px-2.5 py-0.5"
             onClick={() => {
@@ -184,9 +204,11 @@ const updateUser = () => {
         </div>
         {restrictionTest && (
           <div>
-            <p className="text-lumpink font-medium">Si oui, lesquelles ?</p>
+            <p className="text-lumpink font-medium text-center">
+              Si oui, lesquelles ?
+            </p>
             <input
-              className="mb-5 rounded-md"
+              className="mb-5 rounded-md pb-10 pt-4"
               name="restriction"
               type="text"
               value={newUser.restriction}
@@ -199,12 +221,12 @@ const updateUser = () => {
 
       {/* offre et Allergie */}
       <div>
-        <div className="flex flex-col">
-          <p className="text-lumpink font-medium">
+        <div className="flex flex-col ">
+          <p className="text-lumpink font-medium text-center">
             Seriez-vous intéressé(e) par des offres spéciales, des promotions ou
             des réductions sur les restaurants partenaires de l'application ?
           </p>
-          <div className="flex justify-around">
+          <div className="flex justify-around pb-10 pt-4">
             <button
               className="text-lumpink bg-white rounded-md px-2.5 py-0.5"
               onClick={() => {
@@ -222,11 +244,10 @@ const updateUser = () => {
               Non
             </button>
           </div>
-          <p className="text-lumpink font-medium">
+          <p className="text-lumpink font-medium text-center">
             Avez-vous des allergies alimentaires ?
           </p>
-
-          <div className="flex justify-around">
+          <div className="flex justify-around pb-10 pt-4">
             <button
               className="text-lumpink bg-white rounded-md px-2.5 py-0.5"
               onClick={() => {
@@ -248,7 +269,7 @@ const updateUser = () => {
         </div>
         {allergiesTest && (
           <div>
-            <p className="text-lumpink font-medium">
+            <p className="text-lumpink font-medium text-center">
               Si oui, veuillez préciser les allergies alimentaires dont vous
               souffrez.
             </p>
@@ -265,12 +286,12 @@ const updateUser = () => {
       </div>
       {/* recommandations */}
       <div className="flex flex-col">
-        <p className="text-lumpink font-medium">
+        <p className="text-lumpink font-medium text-center">
           Souhaitez-vous recevoir des recommandations personnalisées de
           restaurants et de plats en fonction de vos préférences et de votre
           historique de commande ?
         </p>
-        <div className="flex justify-around">
+        <div className="flex justify-around pb-10 pt-4">
           <button
             className="text-lumpink bg-white rounded-md px-2.5 py-0.5"
             onClick={() => {
@@ -288,11 +309,13 @@ const updateUser = () => {
             Non
           </button>
         </div>
+        <button
+          className="text-lumpink bg-white rounded-md px-2.5 py-0.5 mb-10 mx-auto flex"
+          onClick={userUpdate}
+        >
+          Enregistrer
+        </button>
       </div>
-
-      <button className="bg-lumred" onClick={userUpdate}>
-        aa
-      </button>
     </div>
   );
 };

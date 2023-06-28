@@ -33,6 +33,12 @@ const Profil = () => {
 
   return (
     <>
+      <Image
+        src="/img/pp.png"
+        alt="Photo de profil"
+        width={76}
+        height={79}
+      />
       <ul>
         <li>{user.prenom}</li>
         <li>{user.nom}</li>
