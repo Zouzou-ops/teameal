@@ -125,6 +125,12 @@ function Navbar() {
             <li className="p-4 text-4xl text-white">
               <Link href="#partenaires">Partenaires</Link>
             </li>
+            <li className="p-4 text-4xl text-white">
+              <Link href="/register">S&rsquo;inscrire</Link>
+            </li>
+            <li className="p-4 text-4xl text-white">
+              <Link href="/login">Se connecter</Link>
+            </li>
           </ul>
         </div>
       </div>

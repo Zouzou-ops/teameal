@@ -3,7 +3,8 @@ import Image from "next/image";
 import { AiFillHeart } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
 import { FiMessageCircle } from "react-icons/fi";
-import { BsCircle } from "react-icons/bs";
+import { AiOutlineUser } from "react-icons/ai";
+
 import Link from "next/link";
 
 const home = () => {
@@ -11,14 +12,15 @@ const home = () => {
     <div className="bg-lumpink relative h-screen flex flex-col items-center">
       <div className="flex w-full justify-between mb-12 mt-8">
         <div className="h-10 w-10 bg-lumpink mx-3"></div>
-        <Image
-          className="object-contain"
-          src="/img/mobile/smalmoblogo.png"
-          width={113}
-          height={24}
-          alt="Logo du site web Teameal"
-        />
-
+        <Link href="/home">
+          <Image
+            className="object-contain"
+            src="/img/mobile/smalmoblogo.png"
+            width={113}
+            height={24}
+            alt="Logo du site web Teameal"
+          />
+        </Link>
         <Image
           className=" mx-3"
           src="/img/mobile/settings.png"
@@ -46,21 +48,31 @@ const home = () => {
 
       <nav className="absolute inset-x-0 bottom-0 h-20 mb-5 w-screen border-t-2 flex justify-evenly border-lumdarkpink">
         <button>
-          {" "}
-          <AiFillHeart size={30} />
+          <Link href="/home">
+            <Image
+              src="/img/mobile/home.png"
+              width={30}
+              height={30}
+              alt="Logo du site web Teameal"
+            />
+          </Link>
         </button>
         <button>
           {" "}
-          <AiFillHeart size={30} />
+          <Link href="/favoris">
+            <AiFillHeart size={30} />
+          </Link>
         </button>
         <button>
           {" "}
-          <FiMessageCircle size={30} />
+          <Link href="/message">
+            <FiMessageCircle size={30} />
+          </Link>
         </button>
         <button>
           <Link href="/profil">
             {" "}
-            <BsCircle size={30} />
+            <AiOutlineUser size={30} />
           </Link>
         </button>
       </nav>

@@ -17,7 +17,9 @@ module.exports = {
         'lumpink': '#F7B9D2',
         'lumred': '#E12B2B',
         'lumwhite': '#F0E8DD',
-        'lumdarkpink': '#CD90A8'
+        'lumdarkpink': '#CD90A8',
+        'lumlightpink': '#FAD5E4',
+        'lumlightgrey': '#848FA6',
       },
       backgroundImage: {
         home: "url('/img/hero/home.png')",

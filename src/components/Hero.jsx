@@ -6,7 +6,7 @@ function Hero() {
         <section>
             <div className="bg-home md:h-[50vh] bg-no-repeat bg-cover pt-20 md:px-8 px-20 flex  " >
                 <div className="md:w-full w-4/6 flex flex-col justify-center " >
-                    <h1 className="md:text-4xl text-6xl text-lumred leading-snug font-bold">À la recherche du match culinaire <span className="span-parfait text-lumpink mx-1à ">parfait</span> ?  </h1>
+                    <h1 className="md:text-4xl text-6xl text-lumred leading-snug font-bold">À la recherche du match culinaire <span className="span-parfait text-lumpink mx-1 ">parfait</span> ?  </h1>
                     <p className=" text-lumred font-medium text-xl py-10">Une expérience culinaire qui connecte les cœurs affamés autour d&rsquo;une table.</p>
 
                     {/* Bouton découvrir */}

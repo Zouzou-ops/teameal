@@ -50,3 +50,11 @@
   width: 337.69px;
   height: 152px;
 }
+
+
+.span-tendances {
+  background-image: url("/img/mobile/tendances.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

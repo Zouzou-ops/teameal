@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import Image from "next/image";
-import { getStore, removeStore, setStore } from "./store";
+import Link from "next/link";
 
 const Login = () => {
   const router = useRouter();
@@ -33,7 +33,6 @@ const Login = () => {
         user
       );
       if (response.data.msg === "login successfully") {
-        setStore(response.data.user);
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("user", JSON.stringify(response.data.user));
         router.push("/home");
@@ -65,12 +64,14 @@ const Login = () => {
   return (
     <>
       <div className="min-h-screen bg-lumpink flex flex-col justify-center items-center">
-        <Image
-          src="/img/mobile/logomob.png"
-          width={199}
-          height={43}
-          alt="Logo du site web Teameal"
-        />
+        <Link href="/">
+          <Image
+            src="/img/mobile/logomob.png"
+            width={199}
+            height={43}
+            alt="Logo du site web Teameal"
+          />
+        </Link>
         <p className="text-lumblue font-regular text-xs pb-52">
           À la recherche du match culinaire parfait !
         </p>

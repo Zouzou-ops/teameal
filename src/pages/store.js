@@ -1,16 +1,16 @@
-const store = {};
+// const store = {};
 
-const getStore = () => {
-  return store.user || null;
-};
+// const getStore = () => {
+//   return store.user || null;
+// };
 
-const setStore = (user) => {
-  store.user = user;
-};
+// const setStore = (user) => {
+//   store.user = user;
+// };
 
-const removeStore = () => {
-  store.user = null;
-};
+// const removeStore = () => {
+//   store.user = null;
+// };
 
-export { store, getStore, setStore, removeStore };
+// export { store, getStore, setStore, removeStore };
 
