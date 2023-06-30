@@ -41,58 +41,18 @@ function Navbar() {
             <Link href="#partenaires">Partenaires</Link>
           </li>
 
-          {/* Bouton S&rsquo;inscrire */}
-          <div className="md:hidden">
-            <Link
-              href="/register"
-              className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-lumblue rounded-full group"
-            >
-              <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-lumblue group-hover:translate-x-0 ease">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </span>
-              <span className="absolute flex items-center justify-center w-full h-full bg-lumblue text-lumpink font-bold transition-all duration-300 transform group-hover:translate-x-full ease">
-                S&rsquo;inscrire
-              </span>
-              <span className="relative invisible">S&rsquo;inscrire</span>
+          {/* Bouton s'inscrire et se connecter */}
+          <div className="md:hidden space-x-7 pt-1">
+            <Link href="/register" c>
+              <button className=" font-bold rounded-[50px] py-3 px-6  bg-lumblue text-lumpink  top-[65%] lg:left-[45%] left-[40%]">
+              S&rsquo;inscrire
+              </button>
             </Link>
 
-            <Link
-              href="/login"
-              className="relative inline-flex items-center justify-center mx-8 p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-lumblue rounded-full group"
-            >
-              <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-lumblue group-hover:translate-x-0 ease">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </span>
-              <span className="absolute flex items-center justify-center w-full h-full bg-lumblue text-lumpink font-bold transition-all duration-300 transform group-hover:translate-x-full ease">
+            <Link href="/login">
+              <button className=" font-bold rounded-[50px] py-3 px-6  bg-lumblue text-lumpink top-[65%] lg:left-[45%] left-[40%]">
                 Se connecter
-              </span>
-              <span className="relative invisible">Se connecter</span>
+              </button>
             </Link>
           </div>
         </ul>

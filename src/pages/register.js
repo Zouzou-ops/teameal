@@ -7,7 +7,6 @@ import Footer from "@/components/Footer";
 const Register = () => {
   const router = useRouter();
 
-
   const [user, setUser] = useState({
     nom: "",
     prenom: "",
@@ -53,13 +52,13 @@ const Register = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-lumpink flex  flex-col justify-center items-center">
-        <h2 className="text-lumred font-bold text-2xl pb-10">
+      <div className="min-h-screen bg-lumpink flex  flex-col justify-center items-center px-14">
+        <h2 className="text-lumred font-bold text-2xl pb-7 ">
           Vous souhaitez nous rejoindre ?
         </h2>
         <form className="flex flex-col justify-center items-center">
           <input
-            className="mb-5"
+            className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
             name="nom"
             type="text"
             value={user.nom}
@@ -67,7 +66,7 @@ const Register = () => {
             onChange={handleChangeUser}
           />
           <input
-            className="mb-5"
+            className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
             name="prenom"
             type="text"
             value={user.prenom}
@@ -75,7 +74,7 @@ const Register = () => {
             onChange={handleChangeUser}
           />
           <input
-            className="mb-5"
+            className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
             name="email"
             type="email"
             value={user.email}
@@ -83,7 +82,7 @@ const Register = () => {
             onChange={handleChangeUser}
           />
           <input
-            className="mb-5"
+            className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
             name="ville"
             type="text"
             value={user.ville}
@@ -91,7 +90,7 @@ const Register = () => {
             onChange={handleChangeUser}
           />
           <input
-            className="mb-5"
+            className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
             name="telephone"
             type="text"
             value={user.telephone}
@@ -99,7 +98,7 @@ const Register = () => {
             onChange={handleChangeUser}
           />
           <input
-            className="mb-5"
+            className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
             name="password"
             type="password"
             value={user.password}
@@ -107,7 +106,7 @@ const Register = () => {
             onChange={handleChangeUser}
           />
           <input
-            className="mb-5"
+            className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
             name="passwordConfirm"
             type="password"
             value={user.passwordConfirm}
@@ -115,12 +114,18 @@ const Register = () => {
             onChange={handleChangeUser}
           />
         </form>
-        <p>
+        <label className="text-lumblue pb-4">
+          <input type="checkbox" className="" style={{ transform: 'scale(1.2)'}}/>
           J&rsquo;accepte que les informations saisies dans ce formulaire soient
           utilisées pour permettre de me recontacter.
-        </p>
+        </label>
 
-        <button onClick={userRegister(user)}>S'inscrire</button>
+        <button
+          className=" border-2 border-lumblue font-bold rounded-[50px] py-3 px-6  bg-lumblue text-lumpink"
+          onClick={userRegister(user)}
+        >
+          S'inscrire
+        </button>
       </div>
       <Footer />
     </>

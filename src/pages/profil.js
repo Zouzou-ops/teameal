@@ -1,4 +1,4 @@
-import { getStore, removeStore } from "./store";
+// import { getStore, removeStore } from "./store";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -65,12 +65,14 @@ const Profil = () => {
               Modifier
             </button>
           </Link>
-          <button
-            className="text-white bg-lumblue rounded-md px-2.5 py-0.5 mb-10 "
-            onClick={deleteUser}
-          >
-            Supprimer
-          </button>
+          <Link href="/">
+            <button
+              className="text-white bg-lumblue rounded-md px-2.5 py-0.5 mb-10 "
+              onClick={deleteUser}
+            >
+              Supprimer
+            </button>
+          </Link>
           <nav className="absolute inset-x-0 bottom-0 h-20 mb-5 w-screen border-t-2 flex justify-evenly border-lumdarkpink">
             <button>
               <Link href="/home">

@@ -11,97 +11,91 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <section id="steps" className="bg-lumwhite px-16 py-24 relative ">
-        <h2 className="text-lumblue font-bold text-4xl md:text-3xl pb-24">
-          En seulement <span className="text-white px-3 py-1 span-3">3</span>{" "}
-          étapes
-        </h2>
+      <section id="steps" className="bg-lumwhite relative pb-28">
+        <div>
+          <h2 className="text-lumblue font-bold text-4xl md:text-3xl px-16 py-24">
+            En seulement <span className="text-white px-3 py-1 span-3">3</span>{" "}
+            étapes
+          </h2>
 
-        <div className="flex md:flex-col justify-center md:items-center gap-x-10">
-          <Image
-            width={176}
-            height={166}
-            src="/img/lp/step-1.png"
-            alt="Pictogramme de téléphone"
-          />
-          <Image
-            width={80}
-            height={72}
-            className="self-center md:py-16 md:block hidden md:transform rotate-90"
-            src="/img/lp/blueline.png"
-            alt="image d'une ligne bleu"
-          />
-          <Image
-            width={70}
-            height={72}
-            className="self-center md:py-16 md:hidden"
-            src="/img/lp/blueline.png"
-            alt="image d'une ligne bleu"
-          />
-          <Image
-            width={166}
-            height={163.85}
-            src="/img/lp/step2.png"
-            alt="Pictogramme d'une boisson"
-          />
-          <Image
-            width={80}
-            height={72}
-            className="self-center md:py-16 md:block hidden md:transform rotate-90"
-            src="/img/lp/blueline.png"
-            alt="image d'une ligne bleu"
-          />
-          <Image
-            width={70}
-            height={72}
-            className="self-center md:py-16 md:hidden"
-            src="/img/lp/blueline.png"
-            alt="image d'une ligne bleu"
-          />
-          <Image
-            width={248}
-            height={186.61}
-            src="/img/lp/step3.png"
-            alt="Pictogramme de deux bières"
-          />
-        </div>
+          <div className="flex md:flex-col justify-center md:items-center gap-x-10 pb-10 px-14">
+            <div className="flex flex-col items-center w-full lg:w-1/3">
+              <Image
+                width={176}
+                height={122}
+                src="/img/lp/step-1.svg"
+                alt="Pictogramme de téléphone"
+              />
+              <p className="text-center text-lumblue pt-4">
+                Créé ton <span className="text-lumred">profil</span>
+              </p>
+            </div>
+            <Image
+              width={80}
+              height={72}
+              className="self-center md:py-16 md:block hidden md:transform rotate-90"
+              src="/img/lp/blueline.png"
+              alt="image d'une ligne bleu"
+            />
+            <Image
+              width={70}
+              height={72}
+              className="self-center md:py-16 md:hidden"
+              src="/img/lp/blueline.png"
+              alt="image d'une ligne bleu"
+            />
+            <div className="flex flex-col items-center  w-full lg:w-1/3">
+              <Image
+                width={87.64}
+                height={119.85}
+                src="/img/lp/step-2.svg"
+                alt="Pictogramme d'une boisson"
+              />
+              <p className="text-center text-lumblue pt-4">
+                Trouve le <span className="text-lumred">match</span> parfait
+              </p>
+            </div>
+            <Image
+              width={80}
+              height={72}
+              className="self-center md:py-16 md:block hidden md:transform rotate-90"
+              src="/img/lp/blueline.png"
+              alt="image d'une ligne bleu"
+            />
+            <Image
+              width={70}
+              height={72}
+              className="self-center md:py-16 md:hidden"
+              src="/img/lp/blueline.png"
+              alt="image d'une ligne bleu"
+            />
+            <div className="flex flex-col items-center lg:w-1/3">
+              <Image
+                width={248}
+                height={122.61}
+                src="/img/lp/step-3.svg"
+                alt="Pictogramme de deux bières"
+              />
+              <p className="text-center text-lumblue pt-4">
+                <span className="text-lumred">Rencontres </span>d&rsquo;autres
+                personnes et passe un dîner innatendu !
+              </p>
+            </div>
+          </div>
 
-        <div className=" flex justify-center pt-16 ">
-          <Image
-            width={150.99}
-            height={32}
-            className=" absolute  w-screen "
-            src="/img/lp/pinkline.svg"
-            alt="image d'une ligne rose"
-          />
-
-          {/* Bouton Inscrivez-vous */}
-          <div className="md:hidden py-28">
-            <a
-              href="#_"
-              className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-lumred rounded-full group"
-            >
-              <span className="absolute inset-0 flex items-center justify-center w-full h-full text-lumred duration-300 -translate-x-full bg-lumpink group-hover:translate-x-0 ease">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </span>
-              <span className="absolute flex items-center justify-center w-full h-full bg-lumpink text-lumred font-bold transition-all duration-300 transform group-hover:translate-x-full ease">
-                Inscrivez-vous
-              </span>
-              <span className="relative invisible">Inscrivez-vous</span>
-            </a>
+          <div className="relative ">
+            <Link href="/register">
+              <button className="absolute border-2 border-lumred font-bold rounded-[50px] py-3 px-6  bg-lumpink text-lumred  top-[65%] lg:left-[45%] left-[30%]">
+                Inscrivez vous
+              </button>
+            </Link>
+            <Image
+              width={150.99}
+              height={32}
+              className="w-full md:hidden "
+              src="/img/lp/pinkline.svg"
+              alt="image d'une ligne rose"
+            />
           </div>
         </div>
       </section>
@@ -123,30 +117,29 @@ export default function Home() {
           <Image
             width={243.47}
             height={335}
-            src="/img/lp/restaurant1.png"
+            src="/img/lp/restaurant1.svg"
             alt="Photo de la devanture du restaurant Prunier"
           />
           <Image
             width={243.47}
             height={32}
-            src="/img/lp/restaurant2.png"
+            src="/img/lp/restaurant2.svg"
             alt="Photo de la devanture du restaurant Baobar"
           />
           <Image
             width={243.47}
             height={32}
-            src="/img/lp/restaurant3.png"
+            src="/img/lp/restaurant3.svg"
             alt="Photo de la devanture du fast-food East Side Burger"
           />
           <Image
             width={243.47}
             height={32}
-            src="/img/lp/restaurant4.png"
+            src="/img/lp/restaurant4.svg"
             alt="Photo de la devanture du restaurant Le Consulat"
           />
         </div>
       </section>
-      <span className="text-lumred"></span>
 
       <section
         id="partenaires"
@@ -173,62 +166,46 @@ export default function Home() {
             .
           </p>
 
-          {/* Bouton Devenez partenaire */}
-          <div className="md:hidden px-20">
-            <a
-              href="#_"
-              className="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-lumblue rounded-full  group"
-            >
-              <span className="absolute inset-0 flex items-center justify-center w-full h-full text-lumblue duration-300 -translate-x-full bg-lumpink group-hover:translate-x-0 ease">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </span>
-              <span className="absolute flex items-center justify-center w-full h-full bg-lumpink text-lumblue font-bold transition-all duration-300 transform group-hover:translate-x-full ease">
-                Devenez partenaire
-              </span>
-              <span className="relative invisible">Devenez partenaire</span>
-            </a>
-          </div>
+          <Link href="/restauRegister">
+            <button className=" border-2 border-lumblue font-bold rounded-[50px] py-3 px-6 ml-20 mb-10 bg-lumpink text-lumblue">
+              Devenez partenaire
+            </button>
+          </Link>
         </div>
         <div className="  grid grid-cols-2 mt-20 md:mt-0 pl-44 md:pl-0 self-center items-center w-1/2 md:w-full gap-10 ">
           <Link href="https://www.hippopotamus.fr/">
             <Image
-              width={198.31}
-              height={66.92}
-              src="/img/lp/part1.svg"
+              width={198}
+              height={69}
+              src="/img/lp/hippopotamus.svg"
               alt="logo du restaurant Hippopotamus"
             />
           </Link>
-          <Image
-            width={154.93}
-            height={90.38}
-            src="/img/lp/part2.svg"
-            alt="logo du restaurant Prunier"
-          />
-          <Image
-            width={176.62}
-            height={43.38}
-            src="/img/lp/part3.svg"
-            alt="logo du restaurant Baobar"
-          />
-          <Image
-            width={116.2}
-            height={117.75}
-            src="/img/lp/part4.svg"
-            alt="logo du restaurant fast-food East Side Burger"
-          />
+          <Link href="https://prunier.com/fr/">
+            <Image
+              width={170}
+              height={96}
+              src="/img/lp/prunier.svg"
+              alt="logo du restaurant Prunier"
+            />
+          </Link>
+          <Link href="https://www.pandapandagroup.com/baobar/">
+            <Image
+              width={176}
+              height={40}
+              src="/img/lp/baobar.svg"
+              alt="logo du restaurant Baobar"
+            />
+          </Link>
+          <Link href="https://www.tripadvisor.fr/Restaurant_Review-g187147-d3735287-Reviews-East_Side_Burgers-Paris_Ile_de_France.html">
+            <Image
+              className="ml-7"
+              width={116}
+              height={118}
+              src="/img/lp/eastside.svg"
+              alt="logo du restaurant fast-food East Side Burger"
+            />
+          </Link>
         </div>
       </section>
       <section id="newsletter"></section>

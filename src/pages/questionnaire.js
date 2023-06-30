@@ -91,10 +91,30 @@ const questionnaire1 = () => {
         `http://localhost:5000/api/user/update/${user._id}`,
         newUser
       );
-      router.push("/mobile/home");
+      router.push("/home");
       console.log(response.data);
     } catch (error) {
       console.error(error);
+    }
+  };
+
+  // fonction pour envoyer les données de l'objet user à la bdd
+  const userRegister = (newUser) => async () => {
+    if (passConfirm(newUser.password, newUser.passwordConfirm)) {
+      try {
+        const response = await axios.post(
+          "http://localhost:5000/api/user/register",
+          newUser
+        );
+        router.push(
+          `/validationPage?email=${encodeURIComponent(newUser.email)}`
+        );
+        console.log(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      console.log("Les mots de passe ne sont pas identiques");
     }
   };
 
@@ -103,13 +123,13 @@ const questionnaire1 = () => {
       {loginPage && (
         <div>
           <Navbar />
-          <div className="min-h-screen bg-lumpink flex  flex-col justify-center items-center">
-            <h2 className="text-lumred font-bold text-2xl pb-10">
+          <div className="min-h-screen bg-lumpink flex  flex-col justify-center items-center ">
+            <h2 className="text-lumred font-bold text-2xl pb-7 ">
               Vous souhaitez nous rejoindre ?
             </h2>
             <form className="flex flex-col justify-center items-center">
               <input
-                className="mb-5"
+                className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
                 name="nom"
                 type="text"
                 value={newUser.nom}
@@ -117,7 +137,7 @@ const questionnaire1 = () => {
                 onChange={handleChangeUser}
               />
               <input
-                className="mb-5"
+                className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
                 name="prenom"
                 type="text"
                 value={newUser.prenom}
@@ -125,7 +145,7 @@ const questionnaire1 = () => {
                 onChange={handleChangeUser}
               />
               <input
-                className="mb-5"
+                className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
                 name="email"
                 type="email"
                 value={newUser.email}
@@ -133,7 +153,23 @@ const questionnaire1 = () => {
                 onChange={handleChangeUser}
               />
               <input
-                className="mb-5"
+                className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
+                name="ville"
+                type="text"
+                value={newUser.ville}
+                placeholder="Ville"
+                onChange={handleChangeUser}
+              />
+              <input
+                className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
+                name="telephone"
+                type="text"
+                value={newUser.telephone}
+                placeholder="Téléphone"
+                onChange={handleChangeUser}
+              />
+              <input
+                className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
                 name="password"
                 type="password"
                 value={newUser.password}
@@ -141,7 +177,7 @@ const questionnaire1 = () => {
                 onChange={handleChangeUser}
               />
               <input
-                className="mb-5"
+                className="mb-3 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
                 name="passwordConfirm"
                 type="password"
                 value={newUser.passwordConfirm}
@@ -149,12 +185,18 @@ const questionnaire1 = () => {
                 onChange={handleChangeUser}
               />
             </form>
-            <p>
+            <label className="text-lumblue px-14 pb-4">
+              <input
+                type="checkbox"
+                className=""
+                style={{ transform: "scale(1.2)" }}
+              />
               J&rsquo;accepte que les informations saisies dans ce formulaire
               soient utilisées pour permettre de me recontacter.
-            </p>
+            </label>
 
             <button
+              className=" border-2 border-lumblue font-bold rounded-[50px] py-3 px-6  bg-lumblue text-lumpink"
               onClick={() => {
                 setloginPage(false);
                 setQuestionnaire1(true);
@@ -169,14 +211,18 @@ const questionnaire1 = () => {
       )}
       {/* test */}
       {questionnaire1 && (
-        <div className="bg-bluephone min-h-screen">
-          <p className="text-white">1/6</p>
-          <h2 className="text-lumpink font-semibold">Questionnaire</h2>
-          <p className="text-lumpink font-medium">Mieux vous connaîtres</p>
+        <div className="bg-bluephone min-h-screen text-center">
+          <p className="text-white pt-10 pb-7">1/6</p>
+          <h2 className="text-lumpink font-semibold text-3xl pb-4">
+            Questionnaire
+          </h2>
+          <p className="text-lumpink font-medium pb-10">
+            Mieux vous connaîtres
+          </p>
           <div>
             <form className="flex flex-col justify-center items-center">
               <input
-                className="mb-5"
+                className="mb-6 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
                 name="age"
                 value={newUser.age}
                 type="text"
@@ -184,7 +230,7 @@ const questionnaire1 = () => {
                 onChange={handleChangeUser}
               />
               <input
-                className="mb-5"
+                className="mb-6 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
                 name="telephone"
                 type="text"
                 value={newUser.telephone}
@@ -192,7 +238,7 @@ const questionnaire1 = () => {
                 onChange={handleChangeUser}
               />
               <input
-                className="mb-5"
+                className="mb-6 px-8 py-2 rounded-lg text-lumpink placeholder-lumpink"
                 name="ville"
                 type="text"
                 value={newUser.ville}
@@ -200,8 +246,8 @@ const questionnaire1 = () => {
                 onChange={handleChangeUser}
               />
             </form>
-            <p className="text-lumpink font-medium">Genre</p>
-            <div className="flex justify-around">
+            <p className="text-lumpink font-medium pb-7 pt-10">Genre</p>
+            <div className="flex justify-around px-8">
               <button
                 className="text-lumpink bg-white rounded-md px-2.5 py-0.5"
                 onClick={() => {
@@ -229,7 +275,7 @@ const questionnaire1 = () => {
             </div>
             <div className="flex justify-center items-center pt-10">
               <button
-                className="text-lumblue bg-lumpink rounded-md px-2.5 py-0.5"
+                className="text-lumblue bg-lumpink rounded-lg px-6 py-3"
                 onClick={() => {
                   setQuestionnaire1(false);
                   setQuestionnaire2(true);
@@ -243,14 +289,17 @@ const questionnaire1 = () => {
         </div>
       )}
       {questionnaire2 && (
-        <div className="bg-bluephone min-h-screen">
-          <p className="text-white">2/6</p>
-          <h2 className="text-lumpink font-semibold">Questionnaire</h2>
-          <div className="flex flex-col">
-            <p className="text-lumpink font-medium">
+        <div className="bg-bluephone min-h-screen text-center">
+          <p className="text-white pt-10 pb-7">2/6</p>
+          <h2 className="text-lumpink font-semibold text-3xl pb-4">
+            Questionnaire
+          </h2>
+
+          <div className="flex flex-col ">
+            <p className="text-lumpink font-medium pb-5">
               Avez-vous un régime alimentaire ?
             </p>
-            <div className="flex justify-around">
+            <div className="flex justify-around pb-5">
               <button
                 className="text-lumpink bg-white rounded-md px-2.5 py-0.5"
                 onClick={() => {
@@ -270,9 +319,11 @@ const questionnaire1 = () => {
             </div>
             {regimeTest && (
               <div>
-                <p className="text-lumpink font-medium">Si oui, lequel ?</p>
+                <p className="text-lumpink font-medium pb-5">
+                  Si oui, lequel ?
+                </p>
                 <input
-                  className="mb-5 rounded-md"
+                  className="mb-5 rounded-md placeholder-lumpink"
                   name="regime"
                   type="text"
                   value={newUser.regime}
@@ -282,7 +333,7 @@ const questionnaire1 = () => {
               </div>
             )}
 
-            <p className="text-lumpink font-medium">
+            <p className="text-lumpink font-medium pb-5">
               Avez-vous des restrictions ?
             </p>
 
@@ -307,9 +358,11 @@ const questionnaire1 = () => {
           </div>
           {restrictionTest && (
             <div>
-              <p className="text-lumpink font-medium">Si oui, lesquelles ?</p>
+              <p className="text-lumpink font-medium pb-5">
+                Si oui, lesquelles ?
+              </p>
               <input
-                className="mb-5 rounded-md"
+                className="mb-5 rounded-md placeholder-lumpink"
                 name="restriction"
                 type="text"
                 value={newUser.restriction}
@@ -524,7 +577,7 @@ const questionnaire1 = () => {
                 souffrez.
               </p>
               <input
-                className="mb-5 rounded-md"
+                className="mb-5 rounded-md placeholder-lumpink"
                 name="allergies"
                 type="text"
                 value={newUser.allergies}

@@ -27,8 +27,12 @@ function App({ Component, pageProps }) {
         <title>Teameal</title>
         <meta
           name="Teameal"
-          content="Teameal est une plateforme qui vous facilite la découverte d'expérience culinaire ! Matchez avec des utilisateurs pour créer de groupes d'évènements et osez les rencontres avec de nouvelles personnes autour du partage de votre passion pour la gastronomie."
+          content="Teameal vous facilite la découverte d'expérience culinaire! Matchez avec des utilisateurs pour créer de groupes d'évènements."
         />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>
         <link rel="icon" href="favicon.svg" />
         <link rel="manifest" href="/manifest.json"></link>
       </Head>

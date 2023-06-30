@@ -32,6 +32,11 @@
   height: 122px;  
 }
 
+.button-line{
+  background-image: url("/img/lp/pinkline.svg") no-repeat center / 300px auto ;
+  
+}
+
 /* 404 */
 .error-img {
   background-image: url("/img/error/404.png");

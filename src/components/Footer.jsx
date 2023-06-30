@@ -16,14 +16,15 @@ function Footer() {
         <p className="text-lumpink font-medium pt-5 pb-10">
           À la recherche du match culinaire parfait ?
         </p>
+
         <div className="flex justify-center space-x-7 ">
-          <Link href="https://www.facebook.com/people/Teameal/100093300715273/">
+          <Link href="https://www.facebook.com/people/Teameal/100093300715273/" target="_blank">
             <BsFacebook style={{ color: "#F7B9D2" }} size={25} />
           </Link>
-          <Link href="https://www.linkedin.com/company/teameal/">
+          <Link href="https://www.linkedin.com/company/teameal/" target="_blank">
             <BsLinkedin style={{ color: "#F7B9D2" }} size={25} />
           </Link>
-          <Link href="https://www.instagram.com/teameal.app/">
+          <Link href="https://www.instagram.com/teameal.app/" target="_blank">
             <BsInstagram style={{ color: "#F7B9D2" }} size={25} />
           </Link>
         </div>
